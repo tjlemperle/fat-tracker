@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import Header from './components/Header/Header'
+import User from './components/User/User'
+import Submit from './components/Submit/Submit';
+import History from './components/User/History/History'
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+class App extends Component {
+  constructor(){
+    super()
+    this.state = {
+
+    }
+  }
+
+  componentDidMount(){}
+
+  render(){
+
+    return (
+      <div className="App">
+        <Header />
+        <div>
+          <User />
+          <Submit />
+        </div>
+        <History />
+        
     </div>
   );
+}
 }
 
 export default App;
