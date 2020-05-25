@@ -31,11 +31,11 @@ class Edit extends Component{
                 (
                     <div>
                         <span>Weight:</span>
-                        <input name='weightInput' onChange={e => this.handleChange(e)} />
+                        <input name='weightInput' placeholder={this.props.submission.weight} onChange={e => this.handleChange(e)} />
                         <span>Date:</span>
-                        <input type="date" id="start" name="dateInput" value={this.state.dateInput}  onChange={e => this.handleChange(e)} min="2020-01-01" max="2021-12-31" />
-                        <button onClick={this.props.editSubmission(this.props.submission.id, this.state.dateInput, this.state.weightInput)}>Save</button>
-                        <button onClick={this.props.deleteSubmission}>Delete</button>
+                        <input type="date" id="start" name="dateInput" value={this.props.submission.date}  onChange={e => this.handleChange(e)} min="2020-01-01" max="2021-12-31" />
+                        <button onClick={() => {this.props.editSubmission(this.props.submission.id, this.state.dateInput, this.state.weightInput); this.toggleEdit()}}>Save</button>
+                        <button onClick={() => this.props.deleteSubmission(this.props.submission.id)}>Delete</button>
                     </div>
                 ):
                 (
