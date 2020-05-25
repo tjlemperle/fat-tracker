@@ -47,8 +47,8 @@ class App extends Component {
 
   }
   
-  addSubmission(submission){
-    axios.post(`http://localhost:3001/api/history`, {submission})
+  addSubmission(date, weight){
+    axios.post(`http://localhost:3001/api/history`, {date, weight})
       .then(res => {
         this.setState({
           history: res.data

@@ -1,4 +1,4 @@
-let id = 1
+let id = 2
 
 
 const history = [        
@@ -25,7 +25,6 @@ const users = [{
 module.exports = {
     
     getUsers: (req, res) => {
-        console.log('hi')
         res.status(200).send(users)
     },
 
@@ -35,12 +34,14 @@ module.exports = {
 
     submitWeight: (req, res) => {
         const {date, weight} = req.body
-        
+        console.log(req.body)
         const submission = {id, date, weight}
 
         history.push(submission)
 
         id++
+
+        console.log(history)
 
         res.status(200).send(history)
 

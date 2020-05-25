@@ -1,0 +1,12 @@
+.submit-container{
+    position: fixed;
+    top: 13vh;
+    right: 5%;
+    width: 42%;
+    height: 30vh;
+    background-color: slategrey; 
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
