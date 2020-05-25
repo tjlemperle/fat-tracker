@@ -7,11 +7,6 @@ const history = [
     date: '2020-05-24',
     weight: 250
   },
-  {
-    id: 1,
-    date: '2020-05-24',
-    weight: 250
-  },
 ]
 
 const users = [{

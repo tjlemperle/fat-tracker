@@ -26,6 +26,7 @@ class Edit extends Component{
     
 
     render(){
+ 
         return(
             <div className='submission-container'>
                 
@@ -34,12 +35,12 @@ class Edit extends Component{
                 (
                     <div className='submission-area'>
                         <div className='divvy'>
-                            <span>Weight</span>
-                            <input name='weightInput' placeholder={this.props.submission.weight} onChange={e => this.handleChange(e)} />
+                            <span>Date</span>
+                            <input className='input' type="date" id="start" name="dateInput" defaultValue={this.props.submission.date}  onChange={e => this.handleChange(e)} min="2020-01-01" max="2021-12-31" />
                         </div>
                         <div className='divvy'>
-                            <span>Date</span>
-                            <input type="date" id="start" name="dateInput" defaultValue={this.props.submission.date}  onChange={e => this.handleChange(e)} min="2020-01-01" max="2021-12-31" />
+                            <span>Weight</span>
+                            <input className='input' name='weightInput' placeholder={this.props.submission.weight} onChange={e => this.handleChange(e)} />
                         </div>
                         <div>
                             <button className='button' id='save' onClick={() => {this.props.editSubmission(this.props.submission.id, this.state.dateInput, this.state.weightInput); this.toggleEdit()}}>Save</button>
@@ -50,13 +51,14 @@ class Edit extends Component{
                 (
                     <div className='submission-area'>
                         <div className='divvy'>
-                            <span>Weight</span>
-                            <span className='number2'>{this.props.submission.weight}</span>
-                        </div>
-                        <div className='divvy'>
                             <span>Date</span>
                             <span className='number2'>{this.props.submission.date}</span>
                         </div>
+                        <div className='divvy'>
+                            <span>Weight</span>
+                            <span className='number2'>{this.props.submission.weight}</span>
+                        </div>
+
                         <button id='edit' className='button' onClick={this.toggleEdit}>Edit</button>
                     </div>
                 )}
