@@ -17,7 +17,7 @@ class User extends Component{
             <div className='user-container'>
                 <div className="img-container">                   
                     <img className='user-img' src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/John_Stockton_1988-89.jpg/220px-John_Stockton_1988-89.jpg' alt='Greatest player' />
-                    <span>{this.props.user[0].name}</span>
+                    <h2>{this.props.user[0].name}</h2>
                 </div>
                 <div className='numbers-container'>
                     <section className='initial-container'>

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import '../Edit/Edit.css'
 
 class Edit extends Component{
     constructor(props){
@@ -26,31 +27,40 @@ class Edit extends Component{
 
     render(){
         return(
-            <div>
+            <div className='submission-container'>
+                
+
                 {this.state.isEditing ? 
                 (
-                    <div>
-                        <span>Weight:</span>
-                        <input name='weightInput' placeholder={this.props.submission.weight} onChange={e => this.handleChange(e)} />
-                        <span>Date:</span>
-                        <input type="date" id="start" name="dateInput" defaultValue={this.props.submission.date}  onChange={e => this.handleChange(e)} min="2020-01-01" max="2021-12-31" />
-                        <button onClick={() => {this.props.editSubmission(this.props.submission.id, this.state.dateInput, this.state.weightInput); this.toggleEdit()}}>Save</button>
-                        <button onClick={() => this.props.deleteSubmission(this.props.submission.id)}>Delete</button>
+                    <div className='submission-area'>
+                        <div className='divvy'>
+                            <span>Weight</span>
+                            <input name='weightInput' placeholder={this.props.submission.weight} onChange={e => this.handleChange(e)} />
+                        </div>
+                        <div className='divvy'>
+                            <span>Date</span>
+                            <input type="date" id="start" name="dateInput" defaultValue={this.props.submission.date}  onChange={e => this.handleChange(e)} min="2020-01-01" max="2021-12-31" />
+                        </div>
+                        <div>
+                            <button className='button' id='save' onClick={() => {this.props.editSubmission(this.props.submission.id, this.state.dateInput, this.state.weightInput); this.toggleEdit()}}>Save</button>
+                            <button className='button' onClick={() => this.props.deleteSubmission(this.props.submission.id)}>Delete</button>
+                        </div>
                     </div>
                 ):
                 (
-                    <div>
-                        <div>
-                        <span>Weight: </span>
-                        <span>{this.props.submission.weight}</span>
+                    <div className='submission-area'>
+                        <div className='divvy'>
+                            <span>Weight</span>
+                            <span className='number2'>{this.props.submission.weight}</span>
                         </div>
-                        <div>
-                        <span>Date: </span>
-                        <span>{this.props.submission.date}</span>
+                        <div className='divvy'>
+                            <span>Date</span>
+                            <span className='number2'>{this.props.submission.date}</span>
                         </div>
-                        <button onClick={this.toggleEdit}>Edit</button>
+                        <button id='edit' className='button' onClick={this.toggleEdit}>Edit</button>
                     </div>
                 )}
+                
 
             </div>
         )

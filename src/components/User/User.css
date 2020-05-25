@@ -1,8 +1,8 @@
 
 
 .user-container{
-    position: relative;
-    top: 5vh;
+    position: fixed;
+    top: 13vh;
     left: 5%;
     width: 42%;
     height: 30vh;
@@ -13,6 +13,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 1;
 }
 
 .img-container{

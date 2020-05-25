@@ -1,5 +1,11 @@
 .history-container{
-    display: flex;
-    position: fixed;
-    top: 40vh;
+    position: relative;
+    top: 45vh;
+    
+    
+}
+
+.title2{
+    color: white;
+    text-decoration: underline;
 }
