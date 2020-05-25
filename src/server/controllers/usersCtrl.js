@@ -1,17 +1,26 @@
-let today = Date(Date.now())
-
 let id = 1
 
 
-const history = []
+const history = [        
+    {
+    id: 0,
+    date: '2020-05-24',
+    weight: 2500
+  },
+]
 
-const users = []
+const users = [{
+    name: 'Jacob',
+    weight: 250,
+    goal: 210
+  }]
 
 
 
 module.exports = {
     
     getUsers: (req, res) => {
+        console.log('hi')
         res.status(200).send(users)
     },
 
@@ -34,6 +43,7 @@ module.exports = {
 
     editSubmission: (req, res) => {
         const {submission_id} = req.params
+        // console.log(submission_id)
         const {newWeight, newDate} = req.body
 
         const index = history.findIndex(element => element.id === +submission_id)
@@ -42,9 +52,16 @@ module.exports = {
            return res.status(404).send("No submission found")
         }
 
-        history[index].weight = newWeight
-        history[index].date = newDate
+        const updatedSubmission = {
+            id: +submission_id,
+            date: newDate || history[index].date,
+            weight: newWeight || history[index].weight
+        }
 
+        history[index] = updatedSubmission
+
+        // console.log(history)
+        
         res.status(200).send(history)        
     },
 

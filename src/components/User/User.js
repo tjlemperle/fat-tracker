@@ -8,7 +8,7 @@ class User extends Component{
             
         }
     }
-
+    
     render(){
         let currentIndex = this.props.history.length-1
         let difference = this.props.user[0].weight - this.props.history[currentIndex].weight

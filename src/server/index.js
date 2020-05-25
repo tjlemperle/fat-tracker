@@ -1,7 +1,9 @@
 const express = require('express')
 const usersCtrl = require('./controllers/usersCtrl')
 const app = express()
+const cors = require('cors')
 
+app.use(cors())
 app.use(express.json())
 
 const SERVER_PORT = 3001

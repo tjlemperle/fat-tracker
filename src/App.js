@@ -17,25 +17,11 @@ class App extends Component {
         goal: 210
       }],
 
-      history: [
-        {
+      history: [    {
         id: 0,
-        date: 12,
+        date: '2020-05-24',
         weight: 250
-      },
-    
-      {
-        id: 1,
-        date: 12,
-        weight: 270
-      },
-
-      {
-        id: 2,
-        date: 12,
-        weight: 235
-      },
-    ]
+      }]
 
     }
 
@@ -47,12 +33,12 @@ class App extends Component {
   componentDidMount(){
     axios.get('http://localhost:3001/api/users')
       .then(res =>{
-        this.setState({
-          users: res.data
-        })
-    })
+      console.log("this is working here")         
+      this.setState({           
+        users: res.data})     
+      })
 
-    axios.get('/http://localhost:3001/api/history')
+    axios.get('http://localhost:3001/api/history')
       .then(res => {
         this.setState({
           history: res.data
@@ -60,7 +46,7 @@ class App extends Component {
       })
 
   }
-
+  
   addSubmission(submission){
     axios.post(`http://localhost:3001/api/history`, {submission})
       .then(res => {

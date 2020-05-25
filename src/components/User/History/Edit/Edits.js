@@ -16,13 +16,12 @@ class Edit extends Component{
         })
     }
 
-    handleChange = (e) => {
-    
+    handleChange = (e) => {   
         this.setState({
-            ...this.state,
             [e.target.name]: e.target.value
         })
     }
+    
 
     render(){
         return(
@@ -31,10 +30,10 @@ class Edit extends Component{
                 (
                     <div>
                         <span>Weight:</span>
-                        <input onChange={e => this.handleChange(e)} />
+                        <input name='weightInput' onChange={e => this.handleChange(e)} />
                         <span>Date:</span>
-                        <input value={this.state.dateInput} onChange={e => this.handleChange(e)} />
-                        <button onClick={this.props.editSubmission(this.state.weightInput(this.props.key)), this.toggleEdit}>Save</button>
+                        <input type="date" id="start" name="dateInput" value={this.state.dateInput}  onChange={e => this.handleChange(e)} min="2020-01-01" max="2021-12-31" />
+                        <button onClick={this.props.editSubmission(this.props.submission.id, this.dateInput, this.weightInput)}>Save</button>
                         <button onClick={this.props.deleteSubmission}>Delete</button>
                     </div>
                 ):
