@@ -5,7 +5,7 @@ const history = [
     {
     id: 0,
     date: '2020-05-24',
-    weight: 2500
+    weight: 250
   },
   {
     id: 1,
@@ -15,7 +15,7 @@ const history = [
 ]
 
 const users = [{
-    name: 'Jacob',
+    name: 'John Stockton',
     weight: 250,
     goal: 210
   }]

@@ -20,15 +20,15 @@ class Submit extends Component{
     render(){
         return(
             <div className='submit-container'>
-                <section>
-                    <span>Weight: </span>
-                    <input name="weightInput" onChange={e => this.handleChange(e)} />
+                <section className="positioning">
+                    <h1>Weight   </h1>
+                    <input className='input' className='weightInput' name="weightInput" onChange={e => this.handleChange(e)} />
                 </section>
-                <section>
-                    <span>Date:</span>
-                    <input type="date" id="start" name="dateInput"   onChange={e => this.handleChange(e)} min="2020-01-01" max="2021-12-31" />
+                <section className='positioning'>
+                    <h1>Date   </h1>
+                    <input className='input' type="date" id="start" name="dateInput"   onChange={e => this.handleChange(e)} min="2020-01-01" max="2021-12-31" />
                 </section>
-                <button onClick={() => this.props.addSubmission(this.state.dateInput, this.state.weightInput)}>Submit</button>
+                <button className='button'  onClick={() => this.props.addSubmission(this.state.dateInput, this.state.weightInput)}>Submit</button>
             
             </div>
         )

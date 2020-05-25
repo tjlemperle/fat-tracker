@@ -6,8 +6,10 @@
     left: 5%;
     width: 42%;
     height: 30vh;
-    background-color: slategrey; 
+    background-color: rgb(230, 230, 230); 
     border-radius: 10px;
+    border-color: rgba(255, 255, 255, 0.699);
+    border-style: ridge;
     display: flex;
     align-items: center;
     justify-content: space-between;

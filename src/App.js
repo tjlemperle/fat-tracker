@@ -17,7 +17,7 @@ class App extends Component {
         goal: 210
       }],
 
-      history: [    {
+      history: [{
         id: 0,
         date: '2020-05-24',
         weight: 250
