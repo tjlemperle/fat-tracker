@@ -1,13 +1,20 @@
 import React from 'react'
 import Edit from './Edit/Edits'
 
-function History(){
+function History(props){
     return(
         <div>
-            <div>
-                History.js
-            </div>
-            <Edit />
+            <h1>History</h1>
+            
+            {props.history.map(element => {
+                return  <Edit 
+                            key={element.id}
+                            submission={element}
+                            editSubmission={props.editSubmission}
+                            deleteSubmission={props.deleteSubmission}
+                        />
+
+            })}
 
         </div>
     )
