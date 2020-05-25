@@ -17,8 +17,10 @@ class Edit extends Component{
     }
 
     handleChange = (e) => {
+    
         this.setState({
-            weightInput: e.target.value
+            ...this.state,
+            [e.target.name]: e.target.value
         })
     }
 
@@ -31,8 +33,8 @@ class Edit extends Component{
                         <span>Weight:</span>
                         <input onChange={e => this.handleChange(e)} />
                         <span>Date:</span>
-                        <input onChange={e => this.handleChange(e)} />
-                        <button onClick={this.props.editSubmission(this.state.weightInput), this.toggleEdit}>Save</button>
+                        <input value={this.state.dateInput} onChange={e => this.handleChange(e)} />
+                        <button onClick={this.props.editSubmission(this.state.weightInput(this.props.key)), this.toggleEdit}>Save</button>
                         <button onClick={this.props.deleteSubmission}>Delete</button>
                     </div>
                 ):

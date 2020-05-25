@@ -1,0 +1,37 @@
+
+
+.user-container{
+    position: relative;
+    top: 5vh;
+    left: 5%;
+    width: 42%;
+    height: 30vh;
+    background-color: slategrey; 
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.img-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 5%;
+}
+
+.user-img{
+    position: relative;
+    border-radius: 50000px;
+    height: 60%;
+    
+}
+
+.numbers-container{
+    position: relative;
+    right: 10%;
+    font-size: 44px;
+
+}

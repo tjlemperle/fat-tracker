@@ -34,7 +34,7 @@ module.exports = {
 
     editSubmission: (req, res) => {
         const {submission_id} = req.params
-        const {newDate, newWeight} = req.body
+        const {newWeight, newDate} = req.body
 
         const index = history.findIndex(element => element.id === +submission_id)
 
@@ -42,8 +42,8 @@ module.exports = {
            return res.status(404).send("No submission found")
         }
 
-        history[index].date = newDate
         history[index].weight = newWeight
+        history[index].date = newDate
 
         res.status(200).send(history)        
     },
