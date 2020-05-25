@@ -44,7 +44,7 @@ module.exports = {
     editSubmission: (req, res) => {
         const {submission_id} = req.params
         // console.log(submission_id)
-        const {newWeight, newDate} = req.body
+        const {date, weight} = req.body
 
         const index = history.findIndex(element => element.id === +submission_id)
 
@@ -54,8 +54,8 @@ module.exports = {
 
         const updatedSubmission = {
             id: +submission_id,
-            date: newDate || history[index].date,
-            weight: newWeight || history[index].weight
+            date: date || history[index].date,
+            weight: weight || history[index].weight
         }
 
         history[index] = updatedSubmission
